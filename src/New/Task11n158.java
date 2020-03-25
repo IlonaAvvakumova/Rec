@@ -1,9 +1,9 @@
 package New;
-import java.util.*;
+
 
 /*Удалить из массива все повторяющиеся элементы, оставив их первые вхо-ждения,
 т. е. в массиве должны остаться только различные элементы.
-В задачах 11.149—11.158 под удалением элемента массива следует понимать:
+ под удалением элемента массива следует понимать:
  исключение этого элемента из массива путем смещения всех следующих за ним элементов влево на 1 позицию;
  присваивание последнему элементу массива значения 0.
  */
@@ -11,33 +11,29 @@ public class Task11n158 {
 
 
     public static void main(String[] args) {
-        Integer a[] = {1,24, 6, 2, 24, 7, 6, 9, 6, 4, 2};
+        int a[] = {1, 1, 2, 24, 7, 6, 6, 4, 2};
         int i;
         int j;
-        int t;
-        for (i = 1; i < a.length; i++)
-            for (j = a.length - 1; j >= i; j--) {
-                if (a[j - 1] > a[j]) {
-                    t = a[j - 1];
-                    a[j - 1] = a[j];
-                    a[j] = t;
-                }
+
+
+ int lengtharray = a.length-1;
+
+        for (i = 0; i < a.length-1; i++)
+            for (j = i+1; j < a.length-1; j++){
+                if (a[i] == a[j]) {
+                    for (int k = j; k < a.length-1; k++){
+                        a[k] = a[k+1];
+                        a[lengtharray ]=0;
+                                   }
+                       }
             }
         int q;
         System.out.println("Отстированный массив ");
         for (q = 0; q < a.length; q++){
-            System.out.print(" " + a[q]);
-
-         }
+            System.out.print(" " + a[q]);}
 
 
-
-
-
-
-
-
-        // массив отсортирован пузырьковой сортировкой
+        /*
         System.out.println();
         int b[] = new int[a.length];
         System.out.print("Массив без повторений: "+ a[0] + "");
@@ -57,10 +53,7 @@ public class Task11n158 {
 
 
         }
-
-
-
-
     }
+
 
 
