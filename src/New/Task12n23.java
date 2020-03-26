@@ -7,11 +7,10 @@ public class Task12n23 {
         int n;
 
 int array [] [] = new int[7][7];
-//for (i = 0; i < 7; i++){
-  //  for ( j =0; j < 7; j++){
+/*
         for (i=0; i < array.length; i++){
             for (j=0; j < array.length; j++){
-                if ((i+j)%6 == 0 )
+                if ((i+j)%(array.length-1)== 0 )
                     array [i][j] = 1;
                  else if ( i==j )
                     array [i][j] = 1;
@@ -22,8 +21,43 @@ int array [] [] = new int[7][7];
         System.out.print(array [i] [j] + "\t");
     }
     System.out.println();
-}
+}*/
 
 
+     /*   for (i=0; i < array.length; i++){
+            for (j=0; j < array.length; j++){
+                if ((i+j)%(array.length-1) == 0 )
+                    array [i][j] = 1;
+                else if ( i==j )
+                    array [i][j] = 1;
+                else if ( j == (array.length-1)/2 || i == (array.length-1)/2 )
+                    array [i][j] = 1;
+                else
+                    array [i] [j] =0;
+
+
+                System.out.print(array [i] [j] + "\t");
+            }
+            System.out.println();
+        }*/
+
+        for (i=0; i < array.length; i++){
+            for (j=0; j < array.length; j++){
+                if ((i+j)%(array.length-1)== 0 )
+                    array [i][j] = 1;
+                else if ( i==j )
+                    array [i][j] = 1;
+                else if (j == (array.length-1)/2)
+                    array [i][j] = 1;
+                else if ((j+i)/(array.length-1)!=0)
+                    array [i][j] = 1;
+                else
+                    array [i] [j] =0;
+
+
+                System.out.print(array [i] [j] + "\t");
+            }
+            System.out.println();
+        }
     }
 }
