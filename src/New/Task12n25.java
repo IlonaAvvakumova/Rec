@@ -27,26 +27,26 @@ public class Task12n25 {
        // a(array, n, m);
 
         System.out.println("Второй массив ");
-//n = 12;
-//m = 12;
-      int array2[][] = new int[m][n];
+
+      int array2[][] = new int[m][m];
 
          k = 1;
         for (i = 0; i < m; i++) {
 
-            for (j = 0; j < n; j++) {
+            for (j = 0; j < m; j++) {
                 array2[i][j] = k++;
 
             }
         }
         for (i = 0; i < m; i++) {
 
-            for (j = i+1; j < n; j++) {
+            for (j = i+1; j < m; j++) {
                 int temp = array2[i][j];
                 array2[i][j] = array2[j][i];
                 array2[j][i] = temp;
 
             }
+
         }
         a(array2, n, m);
     }
