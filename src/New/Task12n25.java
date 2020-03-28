@@ -16,7 +16,7 @@ public class Task12n25 {
         int j;
         int n = 10;
         int m = 12;
-        int array[][] = new int[m][n];
+       int array[][] = new int[m][n];
         int k = 1;
         System.out.println("Первый массив ");
         for (i = 0; i < m; i++) {
@@ -24,12 +24,30 @@ public class Task12n25 {
                 array[i][j] = k++;
             }
         }
-        a(array, n, m);
-
+       // a(array, n, m);
 
         System.out.println("Второй массив ");
+//n = 12;
+//m = 12;
+      int array2[][] = new int[m][n];
 
+         k = 1;
+        for (i = 0; i < m; i++) {
 
+            for (j = 0; j < n; j++) {
+                array2[i][j] = k++;
 
+            }
+        }
+        for (i = 0; i < m; i++) {
+
+            for (j = i+1; j < n; j++) {
+                int temp = array2[i][j];
+                array2[i][j] = array2[j][i];
+                array2[j][i] = temp;
+
+            }
+        }
+        a(array2, n, m);
     }
 }
